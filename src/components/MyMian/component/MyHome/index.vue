@@ -1,6 +1,6 @@
 <template>
   <section class="setction flex">
-    <my-fireworks :isTimer="props.isTimer"></my-fireworks>
+    <!-- <my-fireworks :isTimer="props.isTimer"></my-fireworks> -->
     <!-- <MyRain :rainNumber="50" :rotateDeg="-45" :w="2" :h="20"></MyRain> -->
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>

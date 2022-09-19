@@ -6,7 +6,7 @@
         <li @click="navClickItem(index)" v-for="(item, index) in navObj" :key="index" class="navItemCode">
           <p>{{ item }}</p>
         </li>
-        <div class="border_nav" :style="`transform: translate3d(0, ${offsettop}px, 0);`"></div>
+        <div class="border_nav" :style="`transform: translate3d(${offsetleft}px, 0, 0);`"></div>
       </nav>
       <div @click="navShow" class="btnDiv">
         <button class="icon-btn" ref="btnRef">
@@ -23,12 +23,12 @@
 <script setup lang="ts">
 import { onMounted, provide, ref, watch } from "vue";
 
-const navObj = ref(["home", "资料卡", "个人信息", "相册", "学籍"]);
+const navObj = ref(["首页", "资料卡", "个人信息", "相册", "学籍"]);
 const btnRef = ref();
 const myMianRef = ref(); // mymain组件
 const navItem = ref<number>(0); // 当前导航
 const show = ref(false); // 是否显示导航栏
-const offsettop = ref(0); // 边框divtop值
+const offsetleft = ref(0); // 边框divtop值
 // 是否开启导航跳转
 const isNavClick = ref(true);
 
@@ -36,7 +36,7 @@ watch(navItem, (newValue, oldValue) => {
   // console.log(newValue, oldValue);
   let difference: number;
   difference = (newValue - oldValue) * 76;
-  offsettop.value += difference;
+  offsetleft.value += difference;
 
 })
 
