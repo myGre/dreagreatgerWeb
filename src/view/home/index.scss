@@ -7,133 +7,144 @@ $blue: rgb(7, 95, 167);
 
   // 导航栏
   .navs {
-    background-color: rgb(117, 132, 145);
     position: absolute;
-    z-index: 999;
-    // top: 100px;
-    right: 20%;
-    width: 80px;
+    z-index: 20;
+    width: 100%;
     display: flex;
-    // flex-direction: column-reverse;
-    padding: 10px;
-    border-radius: 10px;
-    height: 50px;
+    height: 60px;
+    left: 95%;
     transition: all .5s ease;
-
-    &.maxHeight {
-      width: 600px;
+    
+    &.maxWidth{
+      left: 0%;
+      background-color: rgb(117, 132, 145, .3);
     }
 
-    .icon-btn {
-      position: relative;
-      ;
-      left: 10px;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    .nav{
+      position: absolute;
+      width: 95%;
       height: 60px;
-      outline: none;
-      z-index: 20;
-      padding: 0;
-      width: 60px;
-      text-align: center;
-      // background-color: aliceblue;
-
-      &.toggled {
-        .icon {
-          background-color: transparent;
-          top: -10px;
-
-          &:before {
-            top: 0px;
-            transform: rotate(-45deg);
-          }
-
-          &:after {
-            bottom: 0px;
-            transform: rotate(45deg);
-          }
-        }
+  
+      .favicon{
+        margin-left: 50px;
+        margin-top: 5px;
       }
-    }
-
-    .icon {
-      background-color: $blue;
-      border-radius: 60px;
-      height: 10px;
-      position: relative;
-      transition: all 0.25s;
-      width: 60px;
-
-      &:before,
-      &:after {
-        background-color: $blue;
-        border-radius: 60px;
-        content: "";
-        height: 10px;
-        left: 0px;
+      nav {
+        z-index: 99;
+        display: flex;
+        justify-content: space-evenly;
         position: absolute;
-        z-index: 0;
-        transition: all 0.25s;
-        width: 60px;
-      }
-
-      &:before {
-        top: -20px;
-      }
-
-      &:after {
-        bottom: -20px;
-      }
-    }
-
-    nav {
-      box-sizing: border-box;
-      color: white;
-      font-size: 2rem;
-      overflow: hidden;
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
-      opacity: 0;
-      transition: all .5s ease;
-      z-index: -1;
-
-      li {
-        margin: 5px 0;
-        text-align: center;
-        line-height: 100%;
-        cursor: pointer;
-        // transition: background-color .1s;
-
-        &:hover {
-          border-bottom: 5px solid rgb(0, 74, 110, .5);
-        }
-
-        p {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      .border_nav {
-        width: 20%;
-        height: 66px;
+        top: 0;
+        right: 0;
+        opacity: 0;
         box-sizing: border-box;
-        // right: 20px;
-        top: 0px;
-        left: 0px;
-        position: absolute;
-        background-color: rgb(240, 248, 255, .2);
-        border-bottom: 5px solid rgb(0, 74, 110, .5);
-        transition: transform .3s;
-      }
+        color: white;
+        font-size: 2rem;
+        transition: all .5s ease;
+        z-index: -1;
+  
+        li {
+          margin: 5px 0;
+          text-align: center;
+          line-height: 80%;
+          cursor: pointer;
+          margin-right: 3rem;
+          // transition: background-color .1s;
+          &:hover {
+            color: red;
+          }
+          &.activeClass{
+            color: red;
 
-      &.shake {
-        opacity: 1;
-        z-index: 1;
+          }
+          p {
+            width: 100%;
+            height: 100%;
+          }
+        }
+  
+        .border_nav {
+          width: 0.5rem;
+          height: 2.5rem;
+          box-sizing: border-box;
+          top: 2.1rem;
+          left: -5px;
+          position: absolute;
+          background-color: red;
+          border-radius: 15%;
+          transition: transform .3s;
+        }
+  
+        &.shake {
+          opacity: 1;
+          z-index: 1;
+        }
       }
     }
+    // .btnDiv{
+    //   position: fixed;
+    //   right: 0;
+    //   background-color: rgb(0,0,10);
+    //   width: 60px;
+    //   height: 60px;
+    //   .icon-btn {
+    //     height: 60px;
+    //     background-color: transparent;
+    //     border: none;
+    //     cursor: pointer;
+    //     outline: none;
+    //     z-index: 999;
+    //     width: 60px;
+    //     text-align: center;
+  
+    //     &.toggled {
+    //       .icon {
+    //         background-color: transparent;
+    //         top: -10px;
+  
+    //         &:before {
+    //           top: 1rem;
+    //           transform: rotate(-45deg);
+    //         }
+  
+    //         &:after {
+    //           bottom: -1rem;
+    //           transform: rotate(45deg);
+    //         }
+    //       }
+    //     }
+    //   }
+  
+    //   .icon {
+    //     background-color: $blue;
+    //     border-radius: 60px;
+    //     height: 10px;
+    //     position: relative;
+    //     transition: all 0.25s;
+    //     width: 60px;
+  
+    //     &:before,
+    //     &:after {
+    //       background-color: $blue;
+    //       border-radius: 60px;
+    //       content: "";
+    //       height: 10px;
+    //       left: 0px;
+    //       position: absolute;
+    //       z-index: 0;
+    //       transition: all 0.25s;
+    //       width: 60px;
+    //     }
+  
+    //     &:before {
+    //       top: -2rem;
+    //     }
+  
+    //     &:after {
+    //       bottom: -2rem;
+    //     }
+    //   }
+    // }
   }
 
 }
