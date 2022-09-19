@@ -1,0 +1,38 @@
+.setction {
+  justify-content: space-between;
+
+  &:nth-child(1) {
+    // background: url("@/assets/images/bg.jpg") no-repeat;
+    background-size: 100%;
+    color: white;
+
+    article {
+      padding-right: 50%;
+      // width: 30%;
+    }
+  }
+
+  h1 {
+    font-size: 9rem;
+    margin: 0 0 2.5rem;
+    line-height: 1em;
+  }
+
+  p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__right {
+    position: absolute;
+    // right: -10%;
+    // bottom: 10%;
+    width: 50%;
+  }
+
+  &__left {
+    position: absolute;
+    left: 5%;
+    width: 50%;
+  }
+}

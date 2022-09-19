@@ -1,0 +1,106 @@
+.content_main {
+  height: 100vh;
+  overflow-x: hidden;
+
+  main {
+    width: 100vw;
+  }
+}
+
+.setction {
+  width: 100vw;
+  height: 100vh;
+  min-height: 400px;
+  color: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+  position: relative;
+
+  &:nth-child(1) {
+    padding: 0;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    font-size: 25.5rem;
+    color: rgba(255, 255, 255, .05);
+  }
+}
+
+// 下翻图标
+.bounce-1 {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  // bottom: 80px;
+  z-index: 99;
+  left: 50%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  border-right: 3px solid rgba(255, 255, 255, 0.2);
+  margin-left: -20px;
+  transform: translateY(0%) rotate(45deg);
+  animation: bounce-1 3s infinite normal;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    border-right: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    border-right: 3px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.bounce-1:hover {
+  animation: bounce-2 1s infinite normal;
+}
+
+@keyframes bounce-1 {
+  0% {
+    opacity: 0;
+    bottom: 80px;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 40px;
+
+  }
+}
+
+@keyframes bounce-2 {
+  0% {
+    opacity: 0;
+    bottom: 80px;
+    // box-shadow: #fff 1 1;
+    // background-color: #fff;
+
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 40px;
+    // border-bottom: 3px solid #fff;
+    // border-right: 3px solid #fff;
+  }
+}
