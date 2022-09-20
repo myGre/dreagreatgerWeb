@@ -43,7 +43,12 @@
       opacity: 0;
       padding: 80px 30px 0;
 
+      h3 {
+        color: white;
+      }
+
       .desc {
+        color: white;
         text-indent: 2em;
       }
     }
@@ -52,6 +57,7 @@
       position: absolute;
       width: 15px;
       height: 15px;
+      color: white;
       text-align: center;
       padding: 5px 5px;
       border: 1px solid rgb(202, 202, 202, .8);

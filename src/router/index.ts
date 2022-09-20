@@ -4,7 +4,32 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import("../view/home/index.vue")
+    component: () => import("../view/home/index.vue"),
+    meta: { 'nav': 'home' }
+  },
+  {
+    path: '/inforCard',
+    name: 'inforCard',
+    component: () => import("../view/inforCard/index.vue"),
+    meta: { 'nav': 'inforCard' }
+  },
+  {
+    path: '/messageBoard',
+    name: 'messageBoard',
+    component: () => import("../view/messageBoard/index.vue"),
+    meta: { 'nav': 'messageBoard' }
+  },
+  {
+    path: '/link',
+    name: 'link',
+    component: () => import("../view/link/index.vue"),
+    meta: { 'nav': 'link' }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import("../view/about/index.vue"),
+    meta: { 'nav': 'about' }
   },
   {
     path: '/login',

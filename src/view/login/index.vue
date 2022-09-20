@@ -7,8 +7,6 @@
 </template>
 
 <script setup lang="ts" name="login">
-// import SwitchDark from "@/components/SwitchDark/index.vue";
-import LoginForm from "./components/LoginForm/index.vue";
 </script>
 
 <style scoped lang="scss">

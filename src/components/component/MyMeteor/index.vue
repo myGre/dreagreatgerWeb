@@ -33,8 +33,8 @@ const props = defineProps({
 
 <style lang='scss' scoped>
 .meteorBox {
-  height: 100vh;
-  width: 100vw;
+  // height: 100%;
+  // width: 100%;
 
   .meteor {
     width: 2px;
