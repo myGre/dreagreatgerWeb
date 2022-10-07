@@ -1,66 +1,47 @@
 <template>
-  <div class="home-content">
-    <!-- 导航 -->
-    <div class="navs" :class="{'maxWidth': show}">
-      <div class="nav">
-        <div class="favicon">
-          <img src="../../assets/favicon.ico" alt="">
-        </div>
-        <nav ref="navRef">
-          <li @click="navClickItem(index)" v-for="(item, index) in navObj" :key="index" class="navItemCode"
-            :class="{ 'activeClass': index === navItem}">
-            <p>{{ item }}</p>
-          </li>
-          <div class="border_nav" :style="`transform: translate3d(0, ${navItemOfsetLeft}px, 0);`"></div>
-        </nav>
-      </div>
+  <section class="setction flex">
+    <!-- <my-fireworks :isTimer="props.isTimer"></my-fireworks> -->
+    <MyStar :starNumber="10"></MyStar>
+    <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
+    <div class="setction__left" :style="isActive ? `transform: translateY(0vh);` : ''">
+      <article>
+        <h1>Hwc Dreagreatger</h1>
+        <p>Let's start showing off some magic...</p>
+      </article>
     </div>
-    <!-- 内容区 -->
-    <my-mian ref="myMianRef" :isNavClick="isNavClick" @getIsNavClick="getIsNavClick" @getCurrtent="getCurrtent"
-      :navItem="navItem"></my-mian>
-  </div>
+    <div class="setction__right">
+      <!-- <img src="../../../../../public/images/photo-1623479322729-28b25c16b011.avif" alt="" width="600"> -->
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, watch } from "vue";
+import { computed, nextTick, onMounted, ref } from "vue";
+import { activeSetctionStore } from '@/stores/activeSetction/index';
 
-const navObj = ref(["首页", "资料卡", "个人信息", "相册", "学籍"]);
-const btnRef = ref();
-const navRef = ref(); ///导航
-const myMianRef = ref(); // mymain组件
-const navItem = ref<number>(0); // 当前导航
-const show = ref(false); // 是否显示导航栏
-const navItemOfsetLeft = ref(60); // 边框divtop值
-// 是否开启导航跳转
-const isNavClick = ref(true);
+// 使用pinia管理状态
+const store = activeSetctionStore()
+const isActive = computed(() => store.isActiveHome);
 
-watch(navItem, (newValue) => {
-  navItemOfsetLeft.value = navRef.value.children[newValue].offsetTop;
-  if (newValue < 1) {
-    show.value = false;
-  } else {
-    show.value = true;
+const props = defineProps({
+  isTimer: {
+    type: Boolean,
+    default: true,
   }
+});
+
+onMounted(() => {
+  nextTick(() => {
+    store.setActiveHome(true);
+  })
 })
-// 是否显示导航栏
-function navShow() {
-  show.value = !show.value;
-}
-// 获取当前盒子
-function getCurrtent(index: number) {
-  navItem.value = index;
-}
-// 修改导航跳转状态
-function getIsNavClick(chonge: boolean) {
-  isNavClick.value = chonge;
-}
-// 当前的导航
-function navClickItem(index: number) {
-  isNavClick.value = true;
-  navItem.value = index;
-}
 </script>
 
 <style lang="scss" scoped>
-@import "./index.scss"
+@import "./index.scss";
+
+.setction__left {
+  transform: translateY(100vh);
+  transition: transform .7s ease;
+}
 </style>

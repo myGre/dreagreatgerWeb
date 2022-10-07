@@ -16,7 +16,7 @@ declare module '@vue/runtime-core' {
     MyCart: typeof import('./src/components/component/MyCart/index.vue')['default']
     MyDetail: typeof import('./src/components/MyMian/component/MyInforCard/MyDetail/index.vue')['default']
     MyFireworks: typeof import('./src/components/component/MyFireworks/index.vue')['default']
-    MyHome: typeof import('./src/components/MyMian/component/MyHome/index.vue')['default']
+    MyHome: typeof import('./src/components/MyHome/index.vue')['default']
     MyInforCard: typeof import('./src/components/MyMian/component/MyInforCard/index.vue')['default']
     MyLnformation: typeof import('./src/components/MyMian/component/MyLnformation/index.vue')['default']
     MyMeteor: typeof import('./src/components/component/MyMeteor/index.vue')['default']
