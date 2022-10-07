@@ -8,6 +8,12 @@ const routes = [
     meta: { 'nav': 'home' }
   },
   {
+    path: '/tag',
+    name: 'tag',
+    component: () => import("../view/tag/index.vue"),
+    meta: { 'nav': 'tag' }
+  },
+  {
     path: '/inforCard',
     name: 'inforCard',
     component: () => import("../view/inforCard/index.vue"),

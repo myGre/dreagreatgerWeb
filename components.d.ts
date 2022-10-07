@@ -7,7 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElTimeline: typeof import('element-plus/es')['ElTimeline']
+    ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     MyAlbum: typeof import('./src/components/MyMian/component/MyAlbum/index.vue')['default']
     MyBorderBox: typeof import('./src/components/component/MyBorderBox/index.vue')['default']
     MyCart: typeof import('./src/components/component/MyCart/index.vue')['default']

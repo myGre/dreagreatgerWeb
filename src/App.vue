@@ -36,7 +36,7 @@ import { useRouter, useRoute } from 'vue-router';
 const route = useRoute()
 const router = useRouter();
 
-const navObj = ref(["首页", "资料卡", "留言板", "友情链接", "关于"]);
+const navObj = ref(["首页", "标签", "资料卡", "留言板", "友情链接", "关于"]);
 const isWidth = ref(false);
 const navItemOfsetLeft = ref(0); // 边框divtop值
 const navItem = ref(0); // 当前导航
