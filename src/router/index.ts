@@ -36,11 +36,6 @@ const routes = [
     name: 'about',
     component: () => import("../view/about/index.vue"),
     meta: { 'nav': 'about' }
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import("../view/login/index.vue")
   }
 ]
 

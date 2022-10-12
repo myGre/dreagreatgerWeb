@@ -48,15 +48,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       host: "0.0.0.0",
       port: 5051,
       // open: ,
-      cors: true,
-      // 代理跨域（mock 不需要配置跨域，直接能访问，这里只是个示例）
-      proxy: {
-        "/api": {
-          target: " https://mock.mengxuegu.com/mock/6317f3d14944d71a56f25fbe/api", // easymock
-          changeOrigin: true,
-          rewrite: path => path.replace(/^\/api/, "")
-        }
-      }
     },
     // vite config
     define: {

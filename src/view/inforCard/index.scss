@@ -1,62 +1,14 @@
-.setction {
+.inforCard-content {
   width: 100vw;
   height: 1000px;
-  // background-color: antiquewhite;
 
-  h3 {
-    font-size: 2rem;
-  }
-
-  .main_section {
-    width: 80%;
-    height: 80%;
-    // background-color: rgb(167, 167, 167, .1);
+  .content {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 30px;
 
-    .movie_content {
-      position: absolute;
-      width: 80%;
-      height: 70%;
-      top: 70%;
-      left: 50%;
-      transform: translate3d(-50%, -70%, 0);
-      background-color: rgb(46, 85, 46, .2);
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
-      text-align: center;
-      transition: all .7s cubic-bezier(.67, .13, .1, .81);
-
-      .movie {
-        width: 20%;
-        left: 21px;
-        transition: opacity .7s cubic-bezier(.67, .13, .1, .81);
-
-        .title {
-          // margin-top: -70px;
-          // opacity: .5;
-          padding: 0 3rem;
-          color: white;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-
-        .poster {
-          width: 100%;
-          margin: 0 auto;
-
-          img {
-            // width: 80%;
-            width: 100%;
-            border-radius: 15px;
-            opacity: .8;
-          }
-        }
-      }
+    h3 {
+      color: white;
+      font-size: 3rem;
     }
   }
 }

@@ -10,7 +10,6 @@
       </article>
     </div>
     <div class="setction__right">
-      <!-- <img src="../../../../../public/images/photo-1623479322729-28b25c16b011.avif" alt="" width="600"> -->
     </div>
   </section>
 </template>

@@ -74,7 +74,8 @@ onMounted(() => {
   }, getTime())
 });
 
-onDeactivated(() => {
+
+(() => {
   clearInterval(timer);
 });
 </script>

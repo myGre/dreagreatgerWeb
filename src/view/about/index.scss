@@ -1,0 +1,15 @@
+.about-content {
+  width: 100vw;
+  height: 1000px;
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+
+    h3 {
+      color: white;
+      font-size: 3rem;
+    }
+  }
+}
