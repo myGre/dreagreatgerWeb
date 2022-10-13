@@ -10,8 +10,8 @@
       }}</span></p>
     </div>
 
-    <el-pagination v-model:currentPage="state.pageable.pageNo" :page-size="10" layout=" ->, total, prev, pager, next"
-      :total="state.pageable.total" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
+    <Pagination :pageNo="state.pageable.pageNo" :pageSize="10" :total="state.pageable.total"
+      @sizeChange="handleSizeChange" @currentChange="handleCurrentChange"></Pagination>
   </div>
 </template>
 
@@ -54,7 +54,7 @@ const getInfo = async () => {
 
 onMounted(() => {
   getInfo();
-  // getContentList()
+  getContentList()
 
 })
 </script>
