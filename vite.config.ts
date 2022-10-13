@@ -1,6 +1,9 @@
 import { ConfigEnv, defineConfig, loadEnv, UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from "path";
+import { wrapperEnv } from './src/utils/getEnv';
+import { createHtmlPlugin } from "vite-plugin-html";
+
 // 配置elementUi
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -9,7 +12,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
-  // const viteEnv = wrapperEnv(env)
+  const viteEnv = wrapperEnv(env)
   return {
     plugins: [
       vue({
@@ -27,6 +30,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       }),
       Components({
         resolvers: [ElementPlusResolver()],
+      }),
+      createHtmlPlugin({
+        inject: {
+          data: {
+            title: viteEnv.VITE_GLOB_APP_TITLE
+          }
+        }
       }),
     ],
     resolve: {
@@ -46,8 +56,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       // 服务器主机名，如果允许外部访问，可设置为 "0.0.0.0"
       host: "0.0.0.0",
-      port: 5051,
-      // open: ,
+      port: viteEnv.VITE_PORT,
+      open: viteEnv.VITE_OPEN,
+      cors: true
     },
     // vite config
     define: {

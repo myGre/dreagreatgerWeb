@@ -7,11 +7,21 @@ import { ResultData } from "./interface";
 // const axiosCanceler = new AxiosCanceler();
 
 const config = {
-  baseURL: "/api",
+  baseURL: import.meta.env.VITE_API_URL as string + '/admin/api',
   // 设置超时时间10S
   timeout: ResultEnum.TIMEOUT as number,
-  // 允许携带token
-  withCredentials: true
+
+  /* 
+    在axios里设置了withCredentials: true
+
+    withCredentials的情况下，后端要设置Access-Control-Allow-Origin为你的源地址，例如http://localhost:8080，不能是*，而且还要设置header(‘Access-Control-Allow-Credentials: true’);
+
+    说白了就是后端没允许cookie过去……
+  */
+
+  headers: {
+    'Content-type': 'application/json; charset=utf-8'
+  }
 }
 
 class RequestHttp {
@@ -28,8 +38,7 @@ class RequestHttp {
     this.service.interceptors.request.use((
       config: AxiosRequestConfig) => {
       const globalStore = GlobalStore();
-      const token: string = globalStore.token;
-      return { ...config, headers: { ...config.headers, "x-access-token": token } };
+      return { ...config, headers: { ...config.headers, } };
     },
       (error: AxiosError) => {
         return Promise.reject(error);
@@ -41,18 +50,8 @@ class RequestHttp {
     this.service.interceptors.response.use(
       (response: AxiosResponse) => {
         const { data, config } = response;
-        const globalStore = GlobalStore();
         // 在请求结束后，移除本次请求，并关闭请求
         // axiosCanceler.removePending(config)
-        // 登录失效
-        if (data.code == ResultEnum.OVERDUE) {
-          ElMessage.error(data.msg);
-          globalStore.setToken("");
-          router.replace({
-            path: "/login"
-          });
-          return Promise.reject(data)
-        }
         // * 成功请求（在页面上除非特殊情况，否则不用处理失败逻辑）
         return data;
       },

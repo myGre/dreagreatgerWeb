@@ -10,27 +10,45 @@ export interface ResultData<T = any> extends Result {
   data?: T;
 }
 
-// * 登录模块
-export namespace Login {
-  export interface ReqLoginForm {
-    username: string;
-    password: string;
-  }
-  export interface ResLogin {
-    access_token: string;
-  }
-  export interface ResAuthButtons {
-    [key: string]: any;
-  }
+// * 分页响应参数
+export interface ResPage<T> {
+  datalist: T[];
+  pageNo: number;
+  pageSize: number;
+  total: number;
 }
 
-// * user模块
-export namespace User {
-  export interface ResUserImgs {
-    id: string;
-    image: string;
+// * 分页请求参数
+export interface ReqPage {
+  pageNo: number;
+  pageSize: number;
+}
+
+// * InforCard模块
+export namespace InforCard {
+  export interface ReqInforCardList extends ReqPage {
+
+  }
+  export interface ResInforCardList {
+    _id: string;
+    img: string;
     title: string;
-    csentence: string;
-    cparagraph: string;
+    createdAt: number;
+    updatedAt: number;
+    _v: number;
+  }
+
+  export interface ReqWebWordList extends ReqPage {
+
+  }
+  export interface ResWebWordList {
+    _id: string;
+    english: string;
+    word: string;
+    title: string;
+    desc: string;
+    createdAt: number;
+    updatedAt: number;
+    _v: number;
   }
 }

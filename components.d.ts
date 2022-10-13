@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElAffix: typeof import('element-plus/es')['ElAffix']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     MyBorderBox: typeof import('./src/components/component/MyBorderBox/index.vue')['default']
@@ -18,6 +19,7 @@ declare module '@vue/runtime-core' {
     MyMeteor: typeof import('./src/components/component/MyMeteor/index.vue')['default']
     MyRain: typeof import('./src/components/component/MyRain/index.vue')['default']
     MyStar: typeof import('./src/components/component/MyStar/index.vue')['default']
+    Pagination: typeof import('./src/components/Pagination/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
