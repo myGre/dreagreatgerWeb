@@ -1,6 +1,11 @@
 body {
   overflow-x: hidden;
   overflow-y: auto;
+  background: $bgColor;
+}
+
+.content {
+  min-height: 1000px;
 }
 
 .footer {
@@ -22,10 +27,7 @@ body {
       justify-content: space-evenly;
 
       li {
-        // margin-left: 3rem;
-        font-size: 2rem;
         line-height: 50px;
-
       }
     }
   }
@@ -37,4 +39,24 @@ body {
 
   // position: absolute;
   // bottom: 0;
+}
+
+h1 {
+  color: $titleColor;
+  font-size: 9rem;
+}
+
+p {
+  color: $titleColor;
+  font-size: 2rem;
+}
+
+h3 {
+  color: $titleColor;
+  font-size: 3rem;
+}
+
+li {
+  color: $titleColor;
+  font-size: 2.5rem;
 }

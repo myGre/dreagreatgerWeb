@@ -17,7 +17,6 @@ const props = defineProps({
     default: 10
   },
 })
-
 function randomStar() {
   const left = starRef.value.clientWidth;
   star_itemRef.value.forEach((item: { style: { top: string; left: string; background: string; }; }) => {

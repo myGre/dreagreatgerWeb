@@ -3,7 +3,7 @@
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
     <div class="content">
-      <h3>LINK</h3>
+      <h3>归档</h3>
     </div>
   </div>
 </template>

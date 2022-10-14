@@ -3,9 +3,14 @@
 $bgColorMenu: #1d1d27;
 $duration: .7s;
 
-// 导航栏背景颜色
-$bgColorsBodyOrgie: rgb(255, 180, 87);
-$bgColorsBodyPink: rgb(255, 150, 189);
-$bgColorsBodyBlue: rgb(153, 153, 251);
-$bgColorsBodyBriwn: rgb(255, 231, 151);
-$bgColorsBodyPurple: rgb(207, 255, 241);
+// 夜晚效果
+// $bgColor: linear-gradient(165deg, black 30%, darkblue 200%);
+// $bgColorNav: rgb(26, 26, 26);
+// $titleColor: white;
+// $navColor: red;
+
+// 白天
+$bgColor: linear-gradient(165deg, rgb(230, 230, 230) 30%, rgb(219, 219, 219) 200%);
+$bgColorNav: rgb(197, 197, 197);
+$titleColor: #000;
+$navColor: red;

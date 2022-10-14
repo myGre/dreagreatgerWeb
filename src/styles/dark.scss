@@ -1,0 +1,35 @@
+html.dark {
+
+  $bgColor: linear-gradient(165deg, black 30%, darkblue 200%);
+  $bgColorNav: rgb(26, 26, 26);
+  $titleColor: white;
+  $navColor: red;
+
+  body {
+    background: $bgColor  !important;
+  }
+
+  .header {
+    background-color: $bgColorNav;
+  }
+
+  .star {
+    background: $bgColor  !important;
+  }
+
+  h1 {
+    color: white !important;
+  }
+
+  p {
+    color: white !important;
+  }
+
+  h3 {
+    color: white !important;
+  }
+
+  li {
+    color: white !important;
+  }
+}

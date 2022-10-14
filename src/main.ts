@@ -6,6 +6,8 @@ import App from './App.vue';
 import router from './router';
 import pinia from './stores/index';
 import directives from './utils/directives';
+// custom element dark(自定义暗黑模式)
+import "@/styles/dark.scss";
 
 const app = createApp(App);
 

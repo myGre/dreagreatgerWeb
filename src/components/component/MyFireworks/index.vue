@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts" >
-import { onDeactivated, onMounted, reactive, ref, watch } from "vue";
+import { onActivated, onDeactivated, onMounted, reactive, ref, watch } from "vue";
 import { gsap } from "gsap";
 import useFireworks from '@/hooks/useFireworks';
 
@@ -24,60 +24,59 @@ const {
   onclick,
   toggleAuto,
 } = useFireworks();
-let timer: any; // 定时器
 
-// 触发定时器持续时间
-function getTime() {
-  return Math.floor(Math.random() * 3000 + 2000);
-}
+let timer: any; // 定时器
 
 watch(() => props.isTimer, (newValue, oldValue) => {
   if (!newValue) return clearInterval(timer);
-  let i = 0;
-  timer = setInterval(() => {
-    toggleAuto();
-    i++;
-    if (i > 50) {
-      clearInterval(timer);
-    }
-  }, getTime())
+  setTimer(5)
 });
 
 // visibilitychange事件 ，当浏览器的某个标签页切换到后台，或从后台切换到前台时就会触发该消息。
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
+    console.log('页面被挂起');
     // 页面被挂起
     clearInterval(timer);
 
   } else {
+    console.log('页面被打开');
     // 页面被打开
-    let i = 0;
-    timer = setInterval(() => {
-      toggleAuto();
-      i++;
-      if (i > 50) {
-        clearInterval(timer);
-      }
-    }, getTime())
-
+    setTimer(5);
   }
 })
 
 onMounted(() => {
   let i = 0;
+  setTimer(5);
+});
+// 当元素被插入页面时触发
+onActivated(() => {
+  console.log('元素被插入页面');
+  setTimer(5);
+})
+
+// 切换页面触发
+onDeactivated(() => {
+  console.log('元素从 DOM 中被移除');
+  clearInterval(timer);
+});
+
+// 定时器触发器
+function setTimer(leng: number) {
+  let i = 0;
+  // 随机设置播放时间
+  let setTime = Math.floor(Math.random() * 3000 + 2000);
   timer = setInterval(() => {
     toggleAuto();
     i++;
-    if (i > 3) {
+    // 清除定时器
+    if (i > leng) {
       clearInterval(timer);
     }
-  }, getTime())
-});
+  }, setTime)
+}
 
-
-(() => {
-  clearInterval(timer);
-});
 </script>
 
 <style lang="scss" scoped>

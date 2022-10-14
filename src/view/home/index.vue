@@ -3,7 +3,7 @@
     <!-- <my-fireworks :isTimer="props.isTimer"></my-fireworks> -->
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
-    <div class="setction__left" :style="isActive ? `transform: translateY(0vh);` : ''">
+    <div class="setction__left" :style="isActive ? `transform: translateY(-50%);` : ''">
       <article>
         <h1>Hwc Dreagreatger</h1>
         <p>Let's start showing off some magic...</p>
@@ -38,9 +38,4 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @import "./index.scss";
-
-.setction__left {
-  transform: translateY(100vh);
-  transition: transform .7s ease;
-}
 </style>

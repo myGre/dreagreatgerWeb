@@ -4,8 +4,8 @@
   height: 60px;
   top: -10%;
   z-index: 50;
-  transition: all 1s;
-  background-color: rgb(26, 26, 26);
+  // transition: all 1s;
+  background-color: $bgColorNav;
 
 
   &.maxHeader {
@@ -32,17 +32,16 @@
     li {
       margin: 5px 0;
       text-align: center;
-      line-height: 80%;
+      line-height: 60%;
       cursor: pointer;
       margin-right: 3rem;
 
-      &:hover {
-        color: red;
+      p:hover {
+        color: $navColor;
       }
 
-      &.activeClass {
-        color: red;
-
+      p.activeClass {
+        color: $navColor;
       }
 
       p {
@@ -58,7 +57,7 @@
       top: 2.1rem;
       left: -5px;
       position: absolute;
-      background-color: red;
+      background-color: $navColor;
       border-radius: 15%;
       transition: transform .3s;
     }

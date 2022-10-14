@@ -18,10 +18,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 
 const emit = defineEmits(['sizeChange', 'currentChange'])
-// const continues = ref(6); // 显示分页数量
+
 const props = defineProps({
   pageNo: {
     type: Number,
@@ -29,7 +29,7 @@ const props = defineProps({
   },
   pageSize: {
     type: Number,
-    default: 10
+    default: 20
   },
   total: {
     type: Number,
@@ -47,11 +47,11 @@ const pageCount = computed(() => {
 
 // 当前显示的最小页数和最大页数
 const startNumAndEndNum = computed(() => {
-  let { pageNo, pageSize, continues } = props;
+  let { pageNo, pageSize, continues, total } = props;
   let start = 0;
   let end = 0;
   // 如果总页数小于pageSize
-  if (pageCount.value < pageSize) {
+  if (total < pageSize) {
     start = 1;
     end = pageCount.value;
   } else {
@@ -65,7 +65,7 @@ const startNumAndEndNum = computed(() => {
     }
     if (end > pageCount.value) {
       end = pageCount.value
-      start = pageCount.value - continues + 1
+      start = pageCount.value - continues
     }
   }
   return { start, end }

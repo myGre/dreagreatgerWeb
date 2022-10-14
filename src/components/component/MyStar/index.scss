@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background: linear-gradient(165deg, black 30%, darkblue 200%);
+  background: $bgColor;
 
   .star-item {
     position: absolute;

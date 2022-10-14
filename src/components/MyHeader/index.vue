@@ -3,10 +3,12 @@
     <div class="favicon">
       <img src="@/assets/favicon.ico" alt="">
     </div>
+    <div>
+      <MyToggle></MyToggle>
+    </div>
     <nav ref="navRef">
-      <li @click="navClickItem(index)" v-for="(item, index) in navObj" :key="index" class="navItemCode"
-        :class="{ 'activeClass': index === navItem}">
-        <p>{{ item }}</p>
+      <li @click="navClickItem(index)" v-for="(item, index) in navObj" :key="index" class="navItemCode">
+        <p :class="{ 'activeClass': index === navItem}">{{ item }}</p>
       </li>
       <div class="border_nav" :style="`transform: translate3d(${navItemOfsetLeft}px, 0, 0);`"></div>
     </nav>
@@ -16,11 +18,12 @@
 <script lang="ts" setup>
 import { onMounted, ref, watch, nextTick, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import MyToggle from './component/MyToggle/index.vue';
 
 const route = useRoute()
 const router = useRouter();
 
-const navObj = ref(["首页", "标签", "资料卡", "留言板", "友情链接", "关于"]);
+const navObj = ref(["首页", "标签", "资料卡", "留言板", "归档", "关于"]);
 const isWidth = ref(false);
 const navItemOfsetLeft = ref(0); // 边框divtop值
 const navItem = ref(0); // 当前导航

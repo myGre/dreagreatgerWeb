@@ -10,7 +10,7 @@
       }}</span></p>
     </div>
 
-    <Pagination :pageNo="state.pageable.pageNo" :pageSize="10" :total="state.pageable.total"
+    <Pagination :pageNo="state.pageable.pageNo" :pageSize="state.pageable.pageSize" :total="state.pageable.total"
       @sizeChange="handleSizeChange" @currentChange="handleCurrentChange"></Pagination>
   </div>
 </template>
