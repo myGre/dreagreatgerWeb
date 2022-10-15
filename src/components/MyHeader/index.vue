@@ -3,9 +3,6 @@
     <div class="favicon">
       <img src="@/assets/favicon.ico" alt="">
     </div>
-    <div>
-      <MyToggle></MyToggle>
-    </div>
     <nav ref="navRef">
       <li @click="navClickItem(index)" v-for="(item, index) in navObj" :key="index" class="navItemCode">
         <p :class="{ 'activeClass': index === navItem}">{{ item }}</p>
@@ -18,7 +15,6 @@
 <script lang="ts" setup>
 import { onMounted, ref, watch, nextTick, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import MyToggle from './component/MyToggle/index.vue';
 
 const route = useRoute()
 const router = useRouter();

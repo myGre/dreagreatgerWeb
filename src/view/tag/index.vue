@@ -2,7 +2,7 @@
   <div class="tag-content">
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
-    <div class="content">
+    <div class="tag_title">
       <h3>亲，多喝开水！！！</h3>
     </div>
   </div>

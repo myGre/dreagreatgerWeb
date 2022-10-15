@@ -6,7 +6,7 @@ import { PersistedStateOptions } from "pinia-plugin-persistedstate";
  * @return persist
  */
 
-export const piniaPersistConfig = (key: string) => {
+export const localiniaPersistConfig = (key: string) => {
   const persist: PersistedStateOptions = {
     key,
     storage: window.localStorage

@@ -1,4 +1,4 @@
-import { piniaPersistConfig, sessionPiniaPersistConfig } from "@/config/piniaPersist";
+import { sessionPiniaPersistConfig } from "@/config/piniaPersist";
 import { defineStore } from "pinia"
 
 export const activeSetctionStore = defineStore('activeSetction', {

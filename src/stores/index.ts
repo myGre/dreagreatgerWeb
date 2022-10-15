@@ -1,7 +1,6 @@
 import { createPinia, defineStore } from "pinia";
 import { GlobalState } from "./interface";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"
-import { piniaPersistConfig } from "../config/piniaPersist";
 
 export const GlobalStore = defineStore('global', {
   state: (): GlobalState => {
@@ -20,7 +19,6 @@ export const GlobalStore = defineStore('global', {
   },
   getters: {
   },
-  persist: piniaPersistConfig("GlobalState")
 });
 
 // 持久化存储

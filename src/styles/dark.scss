@@ -6,7 +6,7 @@ html.dark {
   $navColor: red;
 
   body {
-    background: $bgColor  !important;
+    background: $bgColor;
   }
 
   .header {
@@ -14,22 +14,22 @@ html.dark {
   }
 
   .star {
-    background: $bgColor  !important;
+    background: $bgColor;
   }
 
   h1 {
-    color: white !important;
+    color: white;
   }
 
   p {
-    color: white !important;
+    color: white;
   }
 
   h3 {
-    color: white !important;
+    color: white;
   }
 
   li {
-    color: white !important;
+    color: white;
   }
 }

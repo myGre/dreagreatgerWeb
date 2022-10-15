@@ -15,24 +15,24 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref } from "vue";
-import { activeSetctionStore } from '@/stores/activeSetction/index';
+import { computed, nextTick, onActivated, onDeactivated, onMounted, ref } from "vue";
 
-// 使用pinia管理状态
-const store = activeSetctionStore()
-const isActive = computed(() => store.isActiveHome);
-
+const isActive = ref(false);
 const props = defineProps({
   isTimer: {
     type: Boolean,
     default: true,
   }
 });
+onActivated(() => {
+  isActive.value = true;
+})
 
+onDeactivated(() => {
+  isActive.value = false
+})
 onMounted(() => {
-  nextTick(() => {
-    store.setActiveHome(true);
-  })
+  isActive.value = true;
 })
 </script>
 

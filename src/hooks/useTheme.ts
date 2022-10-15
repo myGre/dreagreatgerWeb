@@ -1,23 +1,29 @@
-import { onBeforeMount, ref } from "vue";
-import { getItem, setItem } from "@/utils/storage";
+import { computed, onBeforeMount, ref } from "vue";
+import { darkStore } from '@/stores/darkStore';
 
 export const useTheme = () => {
 
-  const isDark = ref(false);
+  const store = darkStore();
 
+  const isDark = computed(() => store.isDark);
+
+  // 设置暗黑或白天模式
   const switchDark = () => {
     const body = document.documentElement as HTMLElement;
-    isDark.value = !isDark.value;
-    setItem('isDark', isDark.value);
 
-    if (getItem('isDark') === 'true') body.setAttribute("class", "dark");
+    if (isDark.value) body.setAttribute("class", "dark");
     else body.setAttribute("class", "");
+  }
+
+  const changeIsDark = () => {
+    store.setIsDark();
+    switchDark();
   }
 
   onBeforeMount(() => {
     switchDark()
   })
   return {
-    switchDark
+    changeIsDark,
   }
 }

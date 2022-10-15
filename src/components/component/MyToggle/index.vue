@@ -1,6 +1,6 @@
 <template>
   <div class="content-checkbox">
-    <input type="checkbox" id="darkmode-toggle" @change="onAddDarkChange" />
+    <input type="checkbox" id="darkmode-toggle" v-model="isDark" @change="onAddDarkChange()" />
     <label for="darkmode-toggle">
       <svg version="1.1" class="sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
@@ -59,14 +59,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useTheme } from "@/hooks/useTheme";
+import { darkStore } from '@/stores/darkStore';
+const store = darkStore();
+const isDark = ref(store.isDark);
 
-const { switchDark } = useTheme();
+const { changeIsDark } = useTheme()
 
 // 切换模式
 const onAddDarkChange = () => {
-  switchDark()
+  changeIsDark();
 }
 </script>
 

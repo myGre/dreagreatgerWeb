@@ -1,9 +1,8 @@
 <template>
   <div class="app" v-cloak>
-    <el-affix>
-      <my-header></my-header>
-    </el-affix>
+    <my-header></my-header>
     <main class="content">
+      <MyToggle></MyToggle>
       <router-view v-slot="{ Component }">
         <keep-alive>
           <component :is="Component" />

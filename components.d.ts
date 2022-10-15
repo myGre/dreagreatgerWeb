@@ -17,10 +17,9 @@ declare module '@vue/runtime-core' {
     MyMeteor: typeof import('./src/components/component/MyMeteor/index.vue')['default']
     MyRain: typeof import('./src/components/component/MyRain/index.vue')['default']
     MyStar: typeof import('./src/components/component/MyStar/index.vue')['default']
-    MyToggle: typeof import('./src/components/MyHeader/component/MyToggle/index.vue')['default']
+    MyToggle: typeof import('./src/components/component/MyToggle/index.vue')['default']
     Pagination: typeof import('./src/components/Pagination/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Toggle: typeof import('./src/components/MyHeader/component/toggle/index.vue')['default']
   }
 }
