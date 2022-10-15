@@ -9,7 +9,7 @@ export const darkStore = defineStore('darkStore', {
   },
   actions: {
     // 暗黑模式
-    setIsDark(is: boolean) {
+    setIsDark() {
       this.isDark = !this.isDark;
     },
   },

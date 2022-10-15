@@ -1,8 +1,8 @@
 export namespace InforCard {
   export interface Pageable {
-    pageNo: 1,
-    pageSize: 30,
-    total: 0
+    pageNo: number,
+    pageSize: number,
+    total: number
   }
   export interface InforCardList {
     cardList: any[],
