@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElLink: typeof import('element-plus/es')['ElLink']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     MyBorderBox: typeof import('./src/components/component/MyBorderBox/index.vue')['default']

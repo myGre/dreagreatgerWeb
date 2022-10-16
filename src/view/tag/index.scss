@@ -3,23 +3,30 @@
   height: 1000px;
 
   .tag_title{
-    width: 80%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
-    // transform: translate3d(-50%, -50%, 0);
-
-    h3 {
-      width: 16ch;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid;
-      // font-family: monospace;
-      animation: typing 2s steps(9), blink 1s step-end infinite;
-      font-size: 4rem;
-    }
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #ccc;
   }
+  .title_h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    // font-family: monospace;
+    animation: typing 2s steps(9), blink 1s step-end infinite;
+    font-size: 4rem;
+  }
+}
+.el-link{
+  font-size: 2rem;
+  margin-left: 20px;
 }
 
 @keyframes typing {
