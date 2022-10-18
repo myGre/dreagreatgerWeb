@@ -1,10 +1,10 @@
-export namespace InforCard {
+export namespace TatleList {
   export interface Pageable {
     pageNo: number,
     pageSize: number,
     total: number
   }
-  export interface InforCardList {
+  export interface State {
     cardList: any[],
     pageable: Pageable,
     contentList: {

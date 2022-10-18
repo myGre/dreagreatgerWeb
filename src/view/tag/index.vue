@@ -3,32 +3,36 @@
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
     <div class="tag_title">
-      <h3>标签</h3>
+      <div class="title">
+        <h3>共{{ state.pageable.total }}个标签</h3>
+        <p>xxx xxxx</p>
+      </div>
       <div class="tag-link">
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-        <el-link>default</el-link>
-
+        <el-link class="tog" :class="{ 'tcTog': item.typeId }" v-for="(item, index) in state.cardList" :key="item._id"
+          @click="onClickTog($event, index)">{{
+          item.title }}</el-link>
       </div>
     </div>
-    <!-- <h3 class="title_h3">亲，多喝开水！！！</h3> -->
-
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
+import { getRootTog } from '@/api/modules/tag';
+import { useInforCard } from '@/hooks/useinforCard';
+import { onMounted, ref } from 'vue';
+import router from '@/router';
+
+const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getRootTog);
+
+const onClickTog = (e: any, index: number) => {
+  console.log(state.cardList[index].typeId);
+  router.push(`/tag/id?typeId=${state.cardList[index].typeId}`);
+}
+
+onMounted(() => {
+  getContentList()
+})
 
 </script>
 

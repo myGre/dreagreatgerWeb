@@ -3,7 +3,7 @@
     <!-- <my-fireworks :isTimer="props.isTimer"></my-fireworks> -->
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
-    <div class="setction__left" :style="isActive ? `transform: translateY(-50%);` : ''">
+    <div class="setction__left">
       <article>
         <h1>Hwc Dreagreatger</h1>
         <p>Let's start showing off some magic...</p>

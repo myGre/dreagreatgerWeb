@@ -52,3 +52,18 @@ export namespace InforCard {
     _v: number;
   }
 }
+
+// * 标签模块
+export namespace tag {
+  export interface ReqTagList extends ReqPage {
+    typeId?: number
+  }
+  export interface ResTagList {
+    _id: string;
+    title: string;
+    desc: string;
+    createdAt: number;
+    updatedAt: number;
+    _v: number;
+  }
+}

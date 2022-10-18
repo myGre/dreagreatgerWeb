@@ -1,5 +1,5 @@
 import { onMounted, reactive } from 'vue'
-import { InforCard } from './interface'
+import { TatleList } from './interface'
 
 /**
  * @description InforCard 页面操作方法封装
@@ -14,7 +14,7 @@ export const useInforCard = (
   isPageable?: true,
   dataCallBack?: (data: any) => any
 ) => {
-  const state = reactive<InforCard.InforCardList>({
+  const state = reactive<TatleList.State>({
     // 资料卡导航数据
     cardList: [],
     // 分页数据对象
@@ -30,7 +30,7 @@ export const useInforCard = (
   // 初始化
   async function getContentList() {
     try {
-      const result = await api(state.pageable);
+      const result = await api({ ...state.pageable, ...initParam });
       state.cardList = result.data;
       // 解构后台返回的分页数据 (如果有分页更新分页信息)
       const { pageNo, pageSize, total } = result;
@@ -46,7 +46,7 @@ export const useInforCard = (
    * @param {Object} pageable 后台返回的分页数据
    * @return void
    * */
-  const updatePageable = (pageable: InforCard.Pageable) => {
+  const updatePageable = (pageable: TatleList.Pageable) => {
     Object.assign(state.pageable, pageable);
 
   }

@@ -36,6 +36,10 @@ const routes = [
     name: 'about',
     component: () => import("../view/about/index.vue"),
     meta: { 'nav': 'about' }
+  },
+  {
+    path: '/tag/:id',
+    component: () => import('../view/tagDetaill/index.vue')
   }
 ]
 

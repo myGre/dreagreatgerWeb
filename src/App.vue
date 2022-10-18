@@ -3,10 +3,12 @@
     <my-header></my-header>
     <main class="content">
       <MyToggle></MyToggle>
-      <router-view v-slot="{ Component }">
-        <keep-alive>
-          <component :is="Component" />
-        </keep-alive>
+      <router-view v-slot="{ Component, route }">
+        <transition appear name="fade-transform" mode="out-in">
+          <keep-alive>
+            <component :is="Component" :key="route.path" />
+          </keep-alive>
+        </transition>
       </router-view>
     </main>
     <footer class="footer">
@@ -31,6 +33,22 @@
 <style>
 [v-cloak] {
   display: none;
+}
+
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: translateX .3s;
+}
+
+.fade-transform-enter-from {
+
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  /* transition: all 0.2s; */
+  transform: translateX(30px);
 }
 
 /* .app {
