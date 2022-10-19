@@ -1,4 +1,4 @@
-export interface GlobalState {
-  token: string;
-  userInfo: any
+export interface RoutesStore {
+  navRoutes: any[];
+  currentRoute: string
 }

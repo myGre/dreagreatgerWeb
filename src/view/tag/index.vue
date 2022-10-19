@@ -8,7 +8,7 @@
         <p>xxx xxxx</p>
       </div>
       <div class="tag-link">
-        <el-link class="tog" :class="{ 'tcTog': item.typeId }" v-for="(item, index) in state.cardList" :key="item._id"
+        <el-link class="tog" :class="{ 'tcTog': item.promise }" v-for="(item, index) in state.cardList" :key="item._id"
           @click="onClickTog($event, index)">{{
           item.title }}</el-link>
       </div>

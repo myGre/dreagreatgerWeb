@@ -5,9 +5,9 @@
       <div class="togItem_content">
         <h3>{{tagTitle }}</h3>
         <ul>
-          <li class="item_secondtogs" v-for="item in secondtogs" :key="item._id">
-            <p>{{ item.title }}</p>
-            <span>{{ getData(item.createdAt) }}</span>
+          <li class="item_secondtogs" v-for="(item, index) in secondtogs" :key="item._id">
+            <p class="itemContent"><span>{{ index + 1 }}.</span> {{ item.title }}</p>
+            <p class="desc">{{ getData(item.createdAt) }}</p>
           </li>
         </ul>
       </div>

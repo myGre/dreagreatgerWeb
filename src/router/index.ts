@@ -5,37 +5,37 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import("../view/home/index.vue"),
-    meta: { 'nav': 'home' }
+    meta: { nav: 'home', name: '首页' }
   },
   {
     path: '/tag',
     name: 'tag',
     component: () => import("../view/tag/index.vue"),
-    meta: { 'nav': 'tag' }
+    meta: { nav: 'tag', name: '标签' }
   },
   {
     path: '/inforCard',
     name: 'inforCard',
     component: () => import("../view/inforCard/index.vue"),
-    meta: { 'nav': 'inforCard' }
+    meta: { nav: 'inforCard', name: '资料卡' }
   },
   {
     path: '/messageBoard',
     name: 'messageBoard',
     component: () => import("../view/messageBoard/index.vue"),
-    meta: { 'nav': 'messageBoard' }
+    meta: { nav: 'messageBoard', name: '留言板' }
   },
   {
     path: '/link',
     name: 'link',
     component: () => import("../view/link/index.vue"),
-    meta: { 'nav': 'link' }
+    meta: { nav: 'link', name: '归档' }
   },
   {
     path: '/about',
     name: 'about',
     component: () => import("../view/about/index.vue"),
-    meta: { 'nav': 'about' }
+    meta: { nav: 'about', name: '关于' }
   },
   {
     path: '/tag/:id',

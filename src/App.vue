@@ -37,18 +37,18 @@
 
 .fade-transform-leave-active,
 .fade-transform-enter-active {
-  transition: translateX .3s;
+  transition: all .5s;
 }
 
-.fade-transform-enter-from {
-
-  transform: translateX(-30px);
-}
-
+.fade-transform-enter-from,
 .fade-transform-leave-to {
   opacity: 0;
-  /* transition: all 0.2s; */
-  transform: translateX(30px);
+  transform: translateY(400px);
+}
+
+.fade-transform-leave-from,
+.fade-transform-enter-to {
+  transform: translateY(0px);
 }
 
 /* .app {
