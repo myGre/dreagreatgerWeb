@@ -27,7 +27,7 @@
 import { getRootTog } from '@/api/modules/tag';
 import { useInforCard } from '@/hooks/useinforCard';
 import NavLeft from './component/NavLeft/index.vue';
-import { computed, onBeforeMount, onMounted, ref } from 'vue';
+import { computed, onActivated, ref } from 'vue';
 import { getData } from '@/utils/index';
 import { useRoute } from 'vue-router';
 
@@ -35,7 +35,7 @@ const route = useRoute();
 
 let typeId = ref(Number(route.query!.typeId));
 
-const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getRootTog, { typeId: typeId.value });
+const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getRootTog);
 // 根标签
 const tagTitle = computed(() => {
   return state.cardList[0]?.title || 'Js';
@@ -50,8 +50,8 @@ const secondtogs = computed(() => {
   return state.cardList[0]?.secondtogs || []
 })
 
-onBeforeMount(() => {
-  getContentList();
+onActivated(() => {
+  getContentList({ typeId: Number(route.query!.typeId) });
 })
 
 </script>

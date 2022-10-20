@@ -4,6 +4,9 @@ html.dark {
   $bgColorNav: rgb(26, 26, 26);
   $titleColor: white;
   $navColor: red;
+  $togColorHover: rgb(80, 157, 192);
+  $togColor: rgb(219, 219, 219);
+
 
   body {
     background: $bgColor;
@@ -31,5 +34,22 @@ html.dark {
 
   li {
     color: white;
+  }
+
+  .tog {
+
+    &.tcTog {
+      font-size: 4rem;
+      color: $togColor;
+    }
+
+    &:hover {
+      color: $togColorHover;
+      border-bottom: 1px solid $togColorHover;
+    }
+  }
+
+  .nav_tog {
+    background-color: $bgColorNav;
   }
 }

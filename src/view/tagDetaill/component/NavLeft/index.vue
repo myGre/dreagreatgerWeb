@@ -1,5 +1,5 @@
 <template>
-  <div class="tog">
+  <div class="nav_tog">
     <div v-for="item in props.state" :key="item._id">
       <h3>{{ item.title }}</h3>
       <ul class="tog_Nav">
@@ -38,10 +38,6 @@ interface tagStateProps {
 }
 const props = withDefaults(defineProps<tagStateProps>(), {
 });
-
-onMounted(() => {
-  console.log(props.state);
-})
 
 </script>
 

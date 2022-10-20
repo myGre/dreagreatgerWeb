@@ -28,9 +28,9 @@ export const useInforCard = (
   })
 
   // 初始化
-  async function getContentList() {
+  async function getContentList(data: Object = {}) {
     try {
-      const result = await api({ ...state.pageable, ...initParam });
+      const result = await api({ ...state.pageable, ...initParam, ...data });
       state.cardList = result.data;
       // 解构后台返回的分页数据 (如果有分页更新分页信息)
       const { pageNo, pageSize, total } = result;
