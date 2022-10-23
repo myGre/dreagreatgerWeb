@@ -5,3 +5,7 @@ import { ResPage, tag } from '../interface'
 export const getRootTog = (data: tag.ReqTagList) => {
   return http.post<ResPage<tag.ResTagList>>('/togList/page', data);
 }
+// 获取二级标签列表（单个）
+export const getSecondTag = (data: tag.ReqTagList) => {
+  return http.post<ResPage<tag.ResTagList>>('/togList/page', data);
+}

@@ -2,17 +2,19 @@
   <div class="tag-content">
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
-    <div class="tag_title">
-      <div class="title">
-        <h3>共{{ state.pageable.total }}个标签</h3>
-        <p>xxx xxxx</p>
+    <main class="list_title">
+      <div class="tag_title">
+        <div class="title">
+          <h3>共{{ state.pageable.total }}个标签</h3>
+          <p>xxx xxxx</p>
+        </div>
+        <div class="tag-link">
+          <el-link class="tog" :class="{ 'tcTog': item.promise }" v-for="(item, index) in state.cardList"
+            :key="item._id" @click="onClickTog($event, index)">{{
+            item.title }}</el-link>
+        </div>
       </div>
-      <div class="tag-link">
-        <el-link class="tog" :class="{ 'tcTog': item.promise }" v-for="(item, index) in state.cardList" :key="item._id"
-          @click="onClickTog($event, index)">{{
-          item.title }}</el-link>
-      </div>
-    </div>
+    </main>
     <router-view></router-view>
   </div>
 </template>

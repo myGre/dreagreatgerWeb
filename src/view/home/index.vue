@@ -3,14 +3,16 @@
     <!-- <my-fireworks :isTimer="props.isTimer"></my-fireworks> -->
     <MyStar :starNumber="10"></MyStar>
     <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
-    <div class="setction__left">
-      <article>
-        <h1>Hwc Dreagreatger</h1>
-        <p>Let's start showing off some magic...</p>
-      </article>
-    </div>
-    <div class="setction__right">
-    </div>
+    <main class="main_setction">
+      <div class="main_setction__left">
+        <article>
+          <h1>Hwc Dreagreatger</h1>
+          <p>Let's start showing off some magic...</p>
+        </article>
+      </div>
+      <div class="main_setction__right">
+      </div>
+    </main>
   </section>
 </template>
 

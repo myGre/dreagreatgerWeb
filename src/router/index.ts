@@ -40,6 +40,10 @@ const routes = [
   {
     path: '/tag/:id',
     component: () => import('../view/tagDetaill/index.vue')
+  },
+  {
+    path: '/article/:id',
+    component: () => import('../view/article/index.vue')
   }
 ]
 

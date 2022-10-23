@@ -4,7 +4,7 @@
       <!-- 侧边栏 -->
       <nav-left :state="tagList"></nav-left>
 
-      <div class="togItem_content">
+      <!-- <div class="togItem_content">
         <h3>{{tagTitle }}</h3>
         <ul>
           <li class="item_secondtogs" v-for="(item, index) in secondtogs" :key="item._id">
@@ -16,26 +16,23 @@
             </p>
           </li>
         </ul>
-      </div>
+      </div> -->
 
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { getRootTog } from '@/api/modules/tag';
+import { getSecondTag } from '@/api/modules/tag';
 import { useInforCard } from '@/hooks/useinforCard';
 import NavLeft from './component/NavLeft/index.vue';
 import { computed, onActivated, ref } from 'vue';
 import { getData } from '@/utils/index';
 import { useRoute } from 'vue-router';
-import router from '@/router';
 
 const route = useRoute();
 
-let typeId = ref(Number(route.query!.typeId));
-
-const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getRootTog);
+const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getSecondTag);
 // 根标签
 const tagTitle = computed(() => {
   return state.cardList[0]?.title || 'Js';
@@ -52,11 +49,13 @@ const secondtogs = computed(() => {
 
 // 点击当前二级标签
 const getTagList = (el: any, index: number) => {
-  const { _id } = secondtogs.value[index];
-  router.push(`/article/id?id=${_id}`);
+  console.log(secondtogs.value[index]);
+
 
 }
 onActivated(() => {
+  console.log(route.query);
+
   getContentList({ typeId: Number(route.query!.typeId) });
 })
 
