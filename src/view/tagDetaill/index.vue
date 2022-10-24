@@ -1,14 +1,15 @@
 <template>
   <div class="myDetaill-content">
-    <div class="togContent">
+    <div class="tagContent">
       <!-- 侧边栏 -->
       <nav-left :state="tagList"></nav-left>
 
-      <div class="togItem_content">
+      <div class="tagItem_content">
         <h3>{{tagTitle }}</h3>
         <ul>
-          <li class="item_secondtogs" v-for="(item, index) in secondtogs" :key="item._id">
-            <p class="itemContent" @click="getTagList($event, index)"><span>{{ index + 1 }}.</span> {{ item.title }}</p>
+          <li class="item_secondtags" v-for="(item, index) in secondtags" :key="item._id">
+            <p class="itemContent" @click="getTagList($event, index)"><span>{{ index + 1 }}.</span> <span>{{ item.title
+            }}</span></p>
             <p class="desc">
               <span>创建时间：{{ getData(item.createdAt) }}</span>
               <span> &emsp; </span>
@@ -46,13 +47,13 @@ const tagList = computed(() => {
 })
 
 // 二级标签列表
-const secondtogs = computed(() => {
-  return state.cardList[0]?.secondtogs || []
+const secondtags = computed(() => {
+  return state.cardList[0]?.secondtags || []
 })
 
 // 点击当前二级标签
 const getTagList = (el: any, index: number) => {
-  const { _id } = secondtogs.value[index];
+  const { _id } = secondtags.value[index];
   router.push(`/article/id?id=${_id}`);
 
 }

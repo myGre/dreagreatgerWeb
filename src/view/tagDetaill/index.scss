@@ -2,19 +2,24 @@
   height: 1000px;
   // position: absolute;
 
-  .togContent {
+  .tagContent {
     width: 90%;
     margin: 120px auto 0;
     // background-color: azure;
     display: flex;
     justify-content: space-between;
 
-    .togItem_content {
+    h3 {
+      font-size: 3rem;
+    }
+
+    .tagItem_content {
       width: 80%;
       padding: 20px;
       // background-color: azure;
 
-      .item_secondtogs {
+      .item_secondtags {
+        list-style: none;
         line-height: 3rem;
         border-bottom: 1px dashed #ccc;
 

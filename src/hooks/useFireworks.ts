@@ -5,7 +5,7 @@ export default function useFireworks() {
   const auto = ref(false);
   const m = reactive({ x: 0, y: 0 });
   const stageRef = ref();
-  const toggleRef = ref();
+  const taggleRef = ref();
 
   window.onpointerdown = window.onpointermove = (e: any) => {
     m.x = Math.round(e.clientX);
@@ -48,11 +48,11 @@ export default function useFireworks() {
     gsap.killTweensOf(autoPlay)
     gsap.killTweensOf(fire)
     // auto.value = true
-    // toggleAuto()
+    // taggleAuto()
     fire(m)
   }
 
-  function toggleAuto() {
+  function taggleAuto() {
     auto.value = auto.value
     gsap.timeline({ defaults: { duration: 0.3, ease: 'power2.inOut' } })
       .to('.knob', { x: () => (auto.value) ? 18 : 0 }, 0)
@@ -74,8 +74,8 @@ export default function useFireworks() {
 
   return {
     stageRef,
-    toggleRef,
+    taggleRef,
     onclick,
-    toggleAuto,
+    taggleAuto,
   }
 }

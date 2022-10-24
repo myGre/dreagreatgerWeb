@@ -20,6 +20,8 @@
     // background-color: rgba(0, 60, 255, 0.3);
 
     li {
+      font-size: 2rem;
+      list-style: none;
       cursor: pointer;
 
       &.item_curtion {
@@ -39,7 +41,7 @@
     .cardItem {
       display: inline-block;
       margin: 20px 20px;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 }

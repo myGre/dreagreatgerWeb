@@ -1,17 +1,17 @@
 <template>
-  <div class="nav_tog">
+  <div class="nav_tag">
     <div v-for="item in props.state" :key="item._id">
       <h3>{{ item.title }}</h3>
-      <ul class="tog_Nav">
-        <li v-for="(togItem, index) in item.secondtogs" :key="togItem._id"><span>{{ index + 1 }}.</span>
-          <span>{{ togItem.title }}</span>
+      <ul class="tag_Nav">
+        <li v-for="(tagItem, index) in item.secondtags" :key="tagItem._id"><span>{{ index + 1 }}.</span>
+          <span>{{ tagItem.title }}</span>
         </li>
       </ul>
     </div>
 
     <!-- <div>
           <h3>目录</h3>
-          <ul class="tog_Item">
+          <ul class="tag_Item">
             <li>
               <span>js</span>
             </li>

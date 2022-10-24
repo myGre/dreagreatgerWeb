@@ -1,4 +1,8 @@
 export interface RoutesStore {
-  navRoutes: any[];
+  navRoutes: any[]
   currentRoute: string
+}
+export interface GlobalState {
+  token: string
+  userInfo: string
 }

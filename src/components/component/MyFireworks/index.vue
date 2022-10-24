@@ -20,9 +20,9 @@ const props = defineProps({
 
 const {
   stageRef,
-  toggleRef,
+  taggleRef,
   onclick,
-  toggleAuto,
+  taggleAuto,
 } = useFireworks();
 
 let timer: any; // 定时器
@@ -68,7 +68,7 @@ function setTimer(leng: number) {
   // 随机设置播放时间
   let setTime = Math.floor(Math.random() * 3000 + 2000);
   timer = setInterval(() => {
-    toggleAuto();
+    taggleAuto();
     i++;
     // 清除定时器
     if (i > leng) {
