@@ -1,13 +1,10 @@
 .nav_tag {
-  width: 12%;
-  position: absolute;
-  height: 100%;
-  // top: 60px;
+  width: 180px;
   background-color: azure;
   box-sizing: border-box;
   padding: 10px;
 
-  .tag_Nav {
+  .tog_Nav {
     display: flex;
     flex-direction: column;
     padding-left: 0px;
@@ -27,7 +24,7 @@
     }
   }
 
-  .tag_Item {
+  .tog_Item {
     display: flex;
     flex-direction: column;
     padding: 0;

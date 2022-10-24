@@ -3,6 +3,8 @@
     <my-header></my-header>
     <main class="content">
       <MyToggle></MyToggle>
+      <MyStar :starNumber="10"></MyStar>
+      <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
       <router-view v-slot="{ Component, route }">
         <transition appear name="fade-transform" mode="out-in">
           <keep-alive>

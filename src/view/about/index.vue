@@ -1,7 +1,5 @@
 <template>
   <div class="about-content">
-    <MyStar :starNumber="10"></MyStar>
-    <MyMeteor :delay="0" :w="3" :h="400" :rotateDeg="-80"></MyMeteor>
     <div class="content">
       <el-timeline>
         <el-timeline-item center timestamp="2018/4/12" placement="top">

@@ -1,7 +1,5 @@
 <template>
   <div class="inforCard-content">
-    <MyStar :starNumber="10"></MyStar>
-    <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
     <div class="content">
       <div class="header-title">
         <!-- <h3>资料卡</h3> -->

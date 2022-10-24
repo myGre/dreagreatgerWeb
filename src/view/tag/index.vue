@@ -1,7 +1,5 @@
 <template>
   <div class="tag-content">
-    <MyStar :starNumber="10"></MyStar>
-    <MyMeteor :delay="0" :w="3" :h="200" :rotateDeg="-80"></MyMeteor>
     <main class="list_title">
       <div class="tag_title">
         <div class="title">
