@@ -1,8 +1,8 @@
 <template>
-  <div class="myDetaill-content" ref="myDetaillRef">
+  <div class="myDetaill-content">
     <div class="tagContent">
       <!-- 侧边栏 -->
-      <nav-left ref="navLeftRef"></nav-left>
+      <nav-left class="navLeft" :state="state.contentList" ref="navLeftRef"></nav-left>
 
       <div class="tagItem_content">
         <h1>{{ state.cardList[0]?.title }}</h1>
@@ -13,8 +13,6 @@
         </p>
         <hr>
         <div v-html="state.cardList[0]?.content"></div>
-        <div v-html="state.cardList[0]?.content"></div>
-
       </div>
     </div>
   </div>
@@ -24,17 +22,18 @@
 import { getSecondTag } from '@/api/modules/tag';
 import { useInforCard } from '@/hooks/useinforCard';
 import NavLeft from './component/NavLeft/index.vue';
-import { computed, onActivated, ref } from 'vue';
+import { computed, onActivated, onBeforeMount, onMounted, ref } from 'vue';
 import { getData } from '@/utils/index';
 import { useRoute } from 'vue-router';
+import { first } from 'lodash';
 
 const route = useRoute();
-const myDetaillRef = ref();
 const navLeftRef = ref();
 const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getSecondTag);
 
 onActivated(() => {
   getContentList({ _id: route.query!.id });
+
 })
 
 </script>

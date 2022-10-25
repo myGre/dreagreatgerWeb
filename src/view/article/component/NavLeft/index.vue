@@ -1,13 +1,8 @@
 <template>
   <div class="nav_tag" :style="`top:${scrolltop}px` ">
-    <div v-for="item in props.state" :key="item._id">
-      <h3>{{ item.title }}</h3>
-      <ul class="tag_Nav">
-        <li v-for="(tagItem, index) in item.secondtags" :key="tagItem._id"><span>{{ index + 1 }}.</span>
-          <span>{{ tagItem.title }}</span>
-        </li>
-      </ul>
-    </div>
+    <ul class="nav">
+      <li v-for="(item, index) in props.state" :key="index" v-html="item"></li>
+    </ul>
   </div>
 </template>
 

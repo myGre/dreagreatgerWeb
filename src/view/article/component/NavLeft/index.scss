@@ -4,42 +4,23 @@
   box-sizing: border-box;
   padding: 10px;
 
-  .tog_Nav {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0px;
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     li {
+      list-style: none;
       // padding-left: 10px;
       width: 100%;
       cursor: pointer;
       font-size: 1.5rem;
-      line-height: 4rem;
+      line-height: 3rem;
       border-bottom: 1px dashed #ccc;
 
       &:hover {
-        color: rgb(70, 195, 253);
+        // color: rgb(70, 195, 253);
         // background-color: rgb(250, 250, 250, .5);
-      }
-    }
-  }
-
-  .tog_Item {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-
-    li {
-      padding-left: 10px;
-      width: 100%;
-      cursor: pointer;
-      font-size: 2rem;
-      box-sizing: border-box;
-      // line-height: 2rem;
-
-      &:hover {
-        color: rgb(70, 195, 253);
-        background-color: rgb(250, 250, 250, .5);
       }
     }
   }

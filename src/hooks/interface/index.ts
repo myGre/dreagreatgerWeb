@@ -7,8 +7,6 @@ export namespace TatleList {
   export interface State {
     cardList: any[],
     pageable: Pageable,
-    contentList: {
-      [key: string]: any
-    }
+    contentList: any[]
   }
 }

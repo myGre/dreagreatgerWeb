@@ -8,9 +8,14 @@
     display: flex;
     justify-content: space-between;
 
+    .navLeft {
+      min-width: 180px;
+    }
+
     .tagItem_content {
       // margin-left: 200px;
-      width: 80%;
+      min-width: 500px;
+      width: 85%;
       // padding: 20px;
       // background-color: azure;
     }
