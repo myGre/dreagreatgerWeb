@@ -1,7 +1,7 @@
 <template>
   <div class="nav_tag" :style="`top:${scrolltop}px` ">
     <ul class="nav">
-      <li v-for="(item, index) in props.state" :key="index" v-html="item"></li>
+      <li v-html="state"></li>
     </ul>
   </div>
 </template>
@@ -29,11 +29,10 @@ window.onscroll = function () {
   // }
 }
 
-
 const navTagRef = ref();
 // 接收父组件参数并设置默认值
 interface tagStateProps {
-  state?: any[];
+  state?: string;
 }
 const props = withDefaults(defineProps<tagStateProps>(), {
 });

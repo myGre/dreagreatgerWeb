@@ -2,7 +2,7 @@
   <div class="myDetaill-content">
     <div class="tagContent">
       <!-- 侧边栏 -->
-      <nav-left class="navLeft" :state="state.contentList" ref="navLeftRef"></nav-left>
+      <nav-left class="navLeft" :state="navList" ref="navLeftRef"></nav-left>
 
       <div class="tagItem_content">
         <h1>{{ state.cardList[0]?.title }}</h1>
@@ -30,6 +30,11 @@ import { first } from 'lodash';
 const route = useRoute();
 const navLeftRef = ref();
 const { state, getContentList, handleSizeChange, handleCurrentChange } = useInforCard(getSecondTag);
+
+// 根标签列表
+const navList = computed(() => {
+  return state.contentList;
+})
 
 onActivated(() => {
   getContentList({ _id: route.query!.id });

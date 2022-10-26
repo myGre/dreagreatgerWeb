@@ -5,7 +5,7 @@ html.dark {
   $titleColor: white;
   $navColor: red;
   $tagColorHover: rgb(80, 157, 192);
-  $tagColor: rgb(219, 219, 219);
+  $tagColor: rgb(158, 158, 158);
 
 
   body {
@@ -21,19 +21,32 @@ html.dark {
   }
 
   h1 {
-    color: white;
+    color: $titleColor;
   }
 
-  p {
-    color: white;
+  h2 {
+    color: $titleColor;
   }
 
   h3 {
-    color: white;
+    color: $titleColor;
+  }
+
+  h4 {
+    color: $titleColor;
+  }
+
+  h5 {
+    color: $titleColor;
   }
 
   li {
-    color: white;
+    color: $titleColor;
+  }
+
+  p {
+    color: $titleColor;
+
   }
 
   .tag {
@@ -53,3 +66,17 @@ html.dark {
     background-color: $bgColorNav;
   }
 }
+
+// pre {
+//   border: 1px solid #205d85;
+
+//   code {
+//     background-color: #205d85;
+
+//   }
+// }
+
+// blockquote {
+//   background-color: #131227;
+//   border-left: 8px solid #b4d5ff;
+// }

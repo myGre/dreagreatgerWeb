@@ -24,8 +24,9 @@ export const useInforCard = (
       total: 0
     },
     // 对应资料卡的内容
-    contentList: []
+    contentList: ''
   })
+  let H2Str: string = ''
   // 初始化
   async function getContentList(data: Object = {}) {
     try {
@@ -34,15 +35,14 @@ export const useInforCard = (
       // 解构后台返回的分页数据 (如果有分页更新分页信息)
       const { pageNo, pageSize, total } = result;
       updatePageable({ pageNo, pageSize, total });
-
       if (state.cardList[0].content) {
+        // 初始化文章小标题
+        H2Str = '';
         let fristNum = state.cardList[0]?.content.indexOf('<h2');
         let endNum = state.cardList[0]?.content.indexOf('</h2>');
-        let arr = getNavTitleList(fristNum, endNum);
-        // let str = state.cardList[0]?.content.slice(fristNum, endNum + 5);
-        // arr.unshift(str)
-        state.contentList = arr;
-
+        let str = getNavTitleList(fristNum, endNum);
+        // console.log(str);
+        state.contentList = str;
       }
     } catch (error) {
       console.log(error);
@@ -72,18 +72,14 @@ export const useInforCard = (
   }
 
   // 递归求文章小标题
-  let arr: any[] = []
   const getNavTitleList = (frist: number, end: number) => {
     let fristNum = state.cardList[0]?.content.indexOf('<h2', frist);
     let endNum = state.cardList[0]?.content.indexOf('</h2>', end);
-    if (fristNum != -1 && endNum != -1) {
-      let str = state.cardList[0]?.content.slice(fristNum, endNum + 5);
-      getNavTitleList(fristNum + 1, endNum + 1);
-      arr.unshift(str)
-      return arr
-    } else {
-      return arr
-    }
+    if (fristNum == -1 && endNum == -1) return H2Str
+    getNavTitleList(fristNum + 1, endNum + 1);
+    let str = state.cardList[0]?.content.slice(fristNum, endNum + 5);
+    H2Str = str + H2Str
+    return H2Str
   }
 
   return {
